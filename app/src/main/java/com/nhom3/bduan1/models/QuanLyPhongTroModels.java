@@ -6,12 +6,21 @@ public class QuanLyPhongTroModels {
     private String tenPhong;
     private Double tienPhong;
     private String trangThaiPhong;
+    private String yeuCau;
 
     public QuanLyPhongTroModels(String moTaPhong, String tenPhong, Double tienPhong, String trangThaiPhong) {
         this.moTaPhong = moTaPhong;
         this.tenPhong = tenPhong;
         this.tienPhong = tienPhong;
         this.trangThaiPhong = trangThaiPhong;
+    }
+
+    public String getYeuCau() {
+        return yeuCau;
+    }
+
+    public void setYeuCau(String yeuCau) {
+        this.yeuCau = yeuCau;
     }
 
     public QuanLyPhongTroModels() {

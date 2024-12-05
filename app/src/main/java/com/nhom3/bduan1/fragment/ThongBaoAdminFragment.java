@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.bduan1.R;
 import com.nhom3.bduan1.adapter.ThongBaoAdapter;
 import com.nhom3.bduan1.models.ThongBaoModels;
@@ -35,7 +36,8 @@ public class ThongBaoAdminFragment extends Fragment {
     RecyclerView recyclerView;
     ThongBaoAdapter adapter;
     FirebaseFirestore db;
-    ImageView btnthem,imgBackThongBaoAdmin;
+    ImageView imgBackThongBaoAdmin;
+    FloatingActionButton btnthem;
 
     @Nullable
     @Override

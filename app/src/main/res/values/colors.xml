@@ -7,8 +7,12 @@
     <color name="red_status_bill">#E60C0C</color>
     <color name="colorSelected">#2196F3</color> <!-- Màu khi được chọn -->
     <color name="colorUnselected">@color/black</color>
+    <color name="xanh_user">#2196F3</color>
     <!-- Màu cam nhạt -->
     <!-- Màu cam đậm -->
     <!-- Màu viền cam nhạt -->
+    <color name="green_processed">#00FF00</color>
+    <color name="red_pending">#FF0000</color>
+
 
 </resources>

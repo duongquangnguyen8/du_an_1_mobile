@@ -27,13 +27,7 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium" />
 
-        <ImageView
-            android:id="@+id/btnThem_thongBao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_add"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -45,6 +39,16 @@
         android:clipToPadding="false"
         android:scrollbars="vertical" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnThem_thongBao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add"
+        android:backgroundTint="@color/your_primary_color"
+        android:layout_gravity="end"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="16dp"/>
 
 
 </LinearLayout>

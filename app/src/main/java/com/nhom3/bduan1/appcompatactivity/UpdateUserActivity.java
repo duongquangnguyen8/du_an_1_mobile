@@ -1,7 +1,9 @@
 package com.nhom3.bduan1.appcompatactivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -9,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -39,6 +42,10 @@ public class UpdateUserActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.xanh_user)); // Màu thanh trạng thái
+        }
         initUi();
 
         // Initialize Firestore and Firebase Auth

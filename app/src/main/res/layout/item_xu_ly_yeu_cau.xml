@@ -19,7 +19,7 @@
             android:layout_height="110dp"
             android:scaleType="centerCrop"
             android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray" />
+            android:src="@drawable/anhphongtro" />
 
         <!-- Phần thông tin chi tiết -->
         <LinearLayout
@@ -93,10 +93,11 @@
                     android:id="@+id/sptrangthai_xlyc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:drawable/btn_dropdown"
                     android:text="Trạng thái"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
             </LinearLayout>
 
         </LinearLayout>

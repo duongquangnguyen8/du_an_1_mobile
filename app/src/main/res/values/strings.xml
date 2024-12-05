@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">bduan1</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="trang_thai_yeu_cau">
+        <item>Chưa xử lý</item>
+        <item>Đã xử lý</item>
+    </string-array>
 </resources>
+

@@ -18,10 +18,12 @@ public class XuLyYeuCauAdapter extends RecyclerView.Adapter<XuLyYeuCauAdapter.Vi
     private final Context context;
     private final List<QuanLyPhongTroModels> list;
 
+
     public XuLyYeuCauAdapter(Context context, List<QuanLyPhongTroModels> list) {
         this.context = context;
         this.list = list;
     }
+
 
     @NonNull
     @Override
@@ -30,37 +32,55 @@ public class XuLyYeuCauAdapter extends RecyclerView.Adapter<XuLyYeuCauAdapter.Vi
         return new ViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         QuanLyPhongTroModels phongTro = list.get(position);
 
-        // Kiểm tra và gán giá trị an toàn
-        holder.tvtenphong.setText(phongTro.getTenPhong() != null ? phongTro.getTenPhong() : "Không có tên phòng");
-//        holder.tvyeucau.setText(phongTro.get() != null ? phongTro.getYeuCau() : "Không có yêu cầu");
-//        holder.sptrangthai.setText(
-//                phongTro.getTrangThaiYeuCau() != null && !phongTro.getTrangThaiYeuCau().isEmpty()
-//                        ? phongTro.getTrangThaiYeuCau()
-//                        : "Chưa xử lý"
-//        );
 
-        // Khi người dùng nhấn vào item
+        holder.tvtenphong.setText(phongTro.getTenPhong() != null ? phongTro.getTenPhong() : "Không có tên phòng");
+
+
+        String trangThai = phongTro.getTrangThaiPhong();
+        if (trangThai != null && trangThai.equalsIgnoreCase("Đã xử lý")) {
+            holder.tvtrangthai.setText("Đã xử lý");
+            holder.tvtrangthai.setTextColor(context.getResources().getColor(android.R.color.holo_green_dark));
+        } else {
+            holder.tvtrangthai.setText("Chưa xử lý");
+            holder.tvtrangthai.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
+        }
+
+
+        holder.tvtrangthai.setOnClickListener(v -> {
+            String newTrangThai = trangThai.equals("Đã xử lý") ? "Chưa xử lý" : "Đã xử lý";
+            updateTrangThai(position, newTrangThai);
+        });
     }
 
+    // Trả về số lượng mục trong danh sách
     @Override
     public int getItemCount() {
         return list != null ? list.size() : 0;
     }
 
+    // Phương thức cập nhật trạng thái
+    public void updateTrangThai(int position, String newTrangThai) {
+        if (position >= 0 && position < list.size()) {
+            QuanLyPhongTroModels phongTro = list.get(position);
+            phongTro.setTrangThaiPhong(newTrangThai);
+            notifyItemChanged(position);
+        }
+    }
+
+    // Lớp ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         final TextView tvtenphong;
-        final TextView tvyeucau;
-        final TextView sptrangthai;
+        final TextView tvtrangthai;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvtenphong = itemView.findViewById(R.id.tvtenphong_xlyc);
-            tvyeucau = itemView.findViewById(R.id.tvyeucau_xlyc);
-            sptrangthai = itemView.findViewById(R.id.sptrangthai_xlyc);
+            tvtrangthai = itemView.findViewById(R.id.sptrangthai_xlyc);
         }
     }
 }

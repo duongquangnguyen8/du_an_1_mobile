@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".appcompatactivity.UpdateUserActivity">
 
     <RelativeLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#3999EB"
+        android:background="#2196F3"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/imgBackUpdateUser"

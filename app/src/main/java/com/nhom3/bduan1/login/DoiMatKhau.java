@@ -1,15 +1,18 @@
 package com.nhom3.bduan1.login;
 
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.nhom3.bduan1.R;
 import com.google.firebase.auth.AuthCredential;
@@ -26,7 +29,10 @@ public class DoiMatKhau extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doi_mat_khau);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.your_primary_dark_color)); // Màu thanh trạng thái
+        }
         // Khởi tạo các View
         edMatKhauCu = findViewById(R.id.edMatKhauCu);
         edMatKhauMoi = findViewById(R.id.edMatKhauMoi);
